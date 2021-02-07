@@ -4,6 +4,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<c:set var="theLocale"
+	value="${not empty param.theLocale ? param.theLocale : pageContext.request.locale }"
+	scope="session" />
+
+<fmt:setLocale value="${theLocale}" />
+
+<fmt:setBundle basename="com.cian.demo.i18n.resources.myLabels" />
+
 
 <!DOCTYPE html>
 <html>
@@ -12,13 +20,11 @@
 <title>i88n App</title>
 </head>
 <body>
-	<c:set var="theLocale"
-		value="${not empty param.theLocale ? param.theLocale : pageContext.request.locale }"
-		scope="session" />
-		
+	
 	<a href="index.jsp?theLocale=en_US">English</a>
 	<a href="index.jsp?theLocale=es_ES">Spanish</a>
 	<a href="index.jsp?theLocale=de_DE">German</a>
+	<br/>
 
 
 	<fmt:message key="label.greeting" />
