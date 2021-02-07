@@ -12,19 +12,27 @@
 <title>i88n App</title>
 </head>
 <body>
+	<c:set var="theLocale"
+		value="${not empty param.theLocale ? param.theLocale : pageContext.request.locale }"
+		scope="session" />
+		
+	<a href="index.jsp?theLocale=en_US">English</a>
+	<a href="index.jsp?theLocale=es_ES">Spanish</a>
+	<a href="index.jsp?theLocale=de_DE">German</a>
+
 
 	<fmt:message key="label.greeting" />
 	<br />
 	<br />
-	
+
 	<fmt:message key="label.firstname" />
 	<i>John</i>
 	<br />
-	
+
 	<fmt:message key="label.lastname" />
 	<i>Doe</i>
 	<br />
-	
+
 	<fmt:message key="label.welcome" />
 
 </body>
