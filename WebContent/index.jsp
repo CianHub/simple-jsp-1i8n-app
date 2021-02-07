@@ -40,6 +40,10 @@
 	<br />
 
 	<fmt:message key="label.welcome" />
+	
+	<hr/>
+	
+	Selected Local: ${theLocale }
 
 </body>
 </html>
